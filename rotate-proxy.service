@@ -1,0 +1,9 @@
+[Unit]
+Description=Rotate redsocks upstream SOCKS5 proxy (one-shot)
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/rotate-proxy.sh
+# Случайный порядок вместо round-robin:
+# Environment=ROTATE_MODE=random

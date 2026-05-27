@@ -1,0 +1,15 @@
+[Unit]
+Description=redsocks (rotating SOCKS5 upstream)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=redsocks
+Group=redsocks
+ExecStart=/usr/sbin/redsocks -c /etc/redsocks-rotator/redsocks.conf
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target

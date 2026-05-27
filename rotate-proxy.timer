@@ -1,0 +1,11 @@
+[Unit]
+Description=Rotate redsocks SOCKS5 proxy every 30 minutes
+
+[Timer]
+OnBootSec=1min
+OnUnitActiveSec=30min
+AccuracySec=1s
+Persistent=true
+
+[Install]
+WantedBy=timers.target
